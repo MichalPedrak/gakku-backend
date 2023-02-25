@@ -29,6 +29,8 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
+
+    // cookies that we send, to frontend have this cookie
 
 ];

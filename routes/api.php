@@ -23,6 +23,9 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/user', [\App\Http\Controllers\AuthController::class, 'user']);
     Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
     Route::get('/cards', [\App\Http\Controllers\CardsController::class, 'index']);
+    Route::post('/cards/store/', [\App\Http\Controllers\CardsController::class, 'store']);
+    Route::patch('/cards/update/{id}', [\App\Http\Controllers\CardsController::class, 'update']);
+    Route::delete('/cards/destroy/{id}', [\App\Http\Controllers\CardsController::class, 'destroy']);
 });
 
 

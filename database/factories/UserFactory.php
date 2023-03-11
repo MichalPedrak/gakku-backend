@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Groups;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-//            $table->foreignId('group_id');
             $table->string('title');
             $table->string('content');
             $table->string('content_example');

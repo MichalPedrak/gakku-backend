@@ -28,7 +28,7 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::delete('/cards/destroy/{id}', [\App\Http\Controllers\CardsController::class, 'destroy']);
 });
 
-
+Route::get('/groups', [\App\Http\Controllers\UsersGroupsController::class, 'index']);
 
 
 

@@ -12,13 +12,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         \App\Models\User::factory(10)->create();
-         \App\Models\Cards::factory(10)->create();
+
+         \App\Models\UsersGroups::factory(2)->create(['user_id' => 1]);
+         \App\Models\UsersGroups::factory(2)->create(['user_id' => 2]);
+         \App\Models\UsersGroups::factory(2)->create(['user_id' => 3]);
+         \App\Models\UsersGroups::factory(2)->create(['group_id' => 1]);
+         \App\Models\UsersGroups::factory(2)->create(['group_id' => 2]);
+         \App\Models\UsersGroups::factory(2)->create(['group_id' => 3]);
+         \App\Models\UsersGroups::factory(2)->create();
+         \App\Models\UsersGroups::factory(2)->create();
+//         \App\Models\Groups::factory(3)->create(['user_id' => 1]);
+//         \App\Models\Groups::factory(3)->create(['user_id' => 2]);
+//         \App\Models\Groups::factory(3)->create(['user_id' => 3]);
 
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+
+         \App\Models\User::factory()->create([
+             'name' => 'Michal',
+             'email' => 'mpedrak22@gmail.com',
+             'password' => 'qwer1234',
+         ]);
     }
 }

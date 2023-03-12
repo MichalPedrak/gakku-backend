@@ -11,9 +11,11 @@ class Cards extends Model
 
     protected $guarded = [];
 
-//    public function groups(){ // hasOne hasMany belongsTo blongsToMany
-//        return $this->belongsToMany(Groups::class);
-//    }
+    public function groups(){ // hasOne hasMany belongsTo blongsToMany
+        return $this->belongsTo(Groups::class);
+    }
+
+
 
 
 //    public function cardsStatus(){ // hasOne hasMany belongsTo blongsToMany

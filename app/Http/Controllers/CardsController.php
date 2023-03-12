@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 
 class CardsController extends Controller
 {
-    public function index(){
-        return Cards::all();
+    public function index($id = null){
+
+        if(!empty($id)){
+            return Cards::with('groups')->where('group_id', '=', $id)->get();
+        }
+
+        return Cards::with('groups')->get();
 //        return DB::table('cards')->orderBy('id')->cursorPaginate(2);
 
     }
@@ -20,6 +25,7 @@ class CardsController extends Controller
         return Cards::create([
             'title' => $request['title'],
             'content' => $request['content'],
+            'group_id' => $request['group_id'],
             'content_example' => $request['content_example'],
             'definition' => $request['definition'],
             'definition_example' => $request['definition_example'],

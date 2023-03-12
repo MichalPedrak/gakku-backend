@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Groups;
 use Faker\Core\Number;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -21,6 +22,7 @@ class CardsFactory extends Factory
         return [
 //            'group_id' => rand(1,10),
             'title' => Str::random(5),
+            'group_id' => Groups::factory()->create(),
             'content' => Str::random(7),
             'content_example' => Str::random(25),
             'definition' => Str::random(7),

@@ -9,4 +9,6 @@ class Groups extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
 }

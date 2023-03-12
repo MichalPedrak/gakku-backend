@@ -19,17 +19,20 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-Route::middleware('auth:sanctum')->group(function (){
+//Route::middleware('auth:sanctum')->group(function (){
     Route::get('/user', [\App\Http\Controllers\AuthController::class, 'user']);
     Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
-    Route::get('/cards', [\App\Http\Controllers\CardsController::class, 'index']);
+
     Route::post('/cards/store/', [\App\Http\Controllers\CardsController::class, 'store']);
     Route::patch('/cards/update/{id}', [\App\Http\Controllers\CardsController::class, 'update']);
     Route::delete('/cards/destroy/{id}', [\App\Http\Controllers\CardsController::class, 'destroy']);
-});
+//});
 
-Route::get('/groups', [\App\Http\Controllers\UsersGroupsController::class, 'index']);
+Route::get('/groups/{id?}', [\App\Http\Controllers\GroupsController::class, 'index']);
+Route::post('/groups/store', [\App\Http\Controllers\GroupsController::class, 'store']);
 
+
+Route::get('/cards/{id?}', [\App\Http\Controllers\CardsController::class, 'index']);
 
 
 Route::get('/users', [\App\Http\Controllers\AuthController::class, 'users']);
